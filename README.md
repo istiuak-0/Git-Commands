@@ -15,7 +15,7 @@
 | `git commit -m "[commit message]"` | Commit changes |
 | `git rm -r [file-name.txt]` | Remove a file (or folder) |
 | `git remote -v` | View the remote repository of the currently working file or directory |
-| `git commit --amend -m "[new commit message]"` | Rename last commits message |
+| `git commit --amend -m "[new commit message]"` | Rewrites the most recent commit by updating its message (or contents). Creates a new commit ID |
 
 ### Branching & Merging
 
@@ -50,6 +50,8 @@
 | `git pull origin [branch name]` | Pull changes from remote repository |
 | `git remote add origin ssh://git@github.com/[username]/[repository-name].git` | Add a remote repository |
 | `git remote set-url origin ssh://git@github.com/[username]/[repository-name].git` | Set a repository's origin branch to SSH |
+| `git reset --hard origin/main` | Resets the local branch to exactly match origin/main, discarding all local commits and changes  |
+
 
 ### Inspection & Comparison
 
@@ -59,3 +61,11 @@
 | `git log --summary` | View changes (detailed) |
 | `git log --oneline` | View changes (briefly) |
 | `git diff [source branch] [target branch]` | Preview changes before merging |
+
+
+### Head Management
+
+| Command                     | Description                                                                                                                       |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `git reset --hard HEAD~<n>` | Moves the current branch pointer **n commits back** and **discards all commits after that point** (changes are permanently lost). |
+
